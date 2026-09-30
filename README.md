@@ -14,9 +14,7 @@
 
 <p align="center">
   <img src="docs/images/01_overview_batches.png" width="48%" alt="Companies per Batch">
-  <!--
-  <img src="docs/images/18_forecast_all.png" width="48%" alt="AI company forecast with prediction interval">
-  -->
+  <img src="docs/images/03_industry_top" width="48%" alt="Top 10 Industry Groups ">
 </p>
 
 ---
