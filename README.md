@@ -1,16 +1,12 @@
 # YC Startup Intelligence Platform
-<!--
-[![CI](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions)
--->
+
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR-APP.streamlit.app)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 **An end-to-end analytics and data-science project on 6,260 Y Combinator companies: a reproducible data pipeline, a normalised SQL database, an interactive 9-tab Streamlit dashboard, time-series forecasting with proper backtesting, and a leakage-controlled machine-learning model, all with tests and CI.**
 
 **Live demo:** [https://thefaheemkhan.streamlit.app](https://yc-startup-intelligence.streamlit.app/) *(see [Deployment](https://yc-startup-intelligence.streamlit.app/))*
 
-> This project is not affiliated with or endorsed by Y Combinator. Data comes from YC's public company directory via the community project [yc-oss/api](https://github.com/yc-oss/api).
 
 <p align="center">
   <img src="docs/images/04_industry_heatmap.png" width="48%" alt="Industy mix by batch year">
@@ -523,132 +519,7 @@ Modular Python project structure, unit and integration testing, GitHub Actions C
 - All comparisons are descriptive; nothing here is causal.
 - The data is a snapshot from the retrieval date; refreshing changes the numbers.
 
-<!--
-## 17. Run locally
 
-Requires Python 3.10 or newer. The data is already included.
-
-```bash
-git clone https://github.com/YOUR-USERNAME/yc-startup-intelligence.git
-cd yc-startup-intelligence
-
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-streamlit run app/streamlit_app.py     # opens http://localhost:8501
-```
-
-Rebuild everything from raw data (optional):
-
-```bash
-python scripts/run_pipeline.py --offline   # validate, clean, features, database
-python scripts/run_models.py               # forecasts + status model + experiment log
-python -m pytest -q                        # 50 tests
-```
-
-Download fresh data instead of using the included copy: `python scripts/run_pipeline.py --force` (needs internet). Individual stages: `fetch_data.py`, `validate_data.py`, `clean_data.py`, `build_features.py`, `load_database.py` in `scripts/`.
-
-Regenerate the README chart images (needs internet for the map): `pip install -r requirements-docs.txt && python scripts/make_readme_images.py`.
-
-## Deployment
-
-### Step 0: replace the placeholders
-
-```bash
-grep -rn "YOUR" README.md LICENSE
-```
-Replace `YOUR-USERNAME` (GitHub username), `YOUR-APP` (Streamlit app name, chosen in Step 2), `YOUR-PROFILE` (LinkedIn) and `YOUR NAME` (LICENSE and author).
-
-### Step 1: publish the code on GitHub
-
-1. Create an empty **public** repository named `yc-startup-intelligence` on GitHub (no README or licence; they already exist here).
-2. From the project folder:
-
-```bash
-git init
-git add .
-git commit -m "YC Startup Intelligence: pipeline, dashboard, forecasting, ML"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/yc-startup-intelligence.git
-git push -u origin main
-```
-
-3. Confirm these files were pushed, because the deployed app needs them: `data/processed/companies_features.parquet`, `data/processed/dataset_meta.json`, `reports/` and `experiments/`. (The SQLite file is git-ignored on purpose; the app does not use it.) Total repo size is about 25 MB.
-4. Open the **Actions** tab: the CI workflow runs the tests on each push. It is unverified until its first run on GitHub, so check that it turns green.
-5. On the repo page, click the gear next to **About** and add a one-line description, your live URL and topics such as `data-analysis`, `data-science`, `streamlit`, `plotly`, `forecasting`, `machine-learning`, `sql`, `python`.
-
-### Step 2: deploy on Streamlit Community Cloud (free)
-
-1. Go to https://share.streamlit.io and sign in with GitHub, granting access to the repository.
-2. Click **Create app** (or **New app**), choose **Deploy a public app from GitHub**.
-3. Set: Repository `YOUR-USERNAME/yc-startup-intelligence`, Branch `main`, **Main file path `app/streamlit_app.py`**.
-4. Open **Advanced settings** and choose Python **3.12** (3.10 or newer works). No secrets are needed.
-5. Choose an app URL (this becomes `YOUR-APP` in `https://YOUR-APP.streamlit.app`) and click **Deploy**. The first build installs `requirements.txt` and takes a few minutes; logs are visible in the app's **Manage app** panel.
-
-Menu names on Streamlit's site change over time; if something differs, the [Streamlit deployment docs](https://docs.streamlit.io/deploy/streamlit-community-cloud) are authoritative.
-
-### Step 3: finish the launch
-
-- Paste the live URL into the two `YOUR-APP` spots in this README, commit and push (the app redeploys automatically on every push).
-- Take real screenshots of the live app (especially the Geography map) and save them in `docs/images/`, then add them to the README. Or run the image script on a machine with internet to render the map: it will create `docs/images/07_geo_map.png`.
-- Pin the repository on your GitHub profile and add the live link to your resume and LinkedIn.
-- Free Streamlit apps go to sleep after a period of inactivity; the first visitor after that sees a "wake up" button. Open the app before sharing it in an interview.
-
-### Refreshing the data later
-
-```bash
-python scripts/run_pipeline.py --force
-python scripts/run_models.py
-python -m pytest -q
-git add data reports experiments && git commit -m "Refresh data" && git push
-```
-
-### Alternatives to Streamlit Cloud
-
-Any host that can run Python works with: `streamlit run app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0` (for example Render, Railway or your own server). A Dockerfile is not included yet.
-
-### Troubleshooting
-
-| Symptom | Fix |
-|---|---|
-| "Processed data not found" in the app | The parquet files were not pushed; commit `data/processed/` and redeploy |
-| Build fails on a package | Check the Manage app logs; try Python 3.12 in Advanced settings |
-| Tests skip or fail in CI | They need `data/processed/companies_features.parquet` in the repo |
-| Map does not appear | It loads map data from a CDN; check the browser's network access |
-| Numbers differ from this README | You refreshed the data; the source updates daily |
-
-## 19. Resume and LinkedIn bullets
-
-Only figures measured in this project are used.
-
-Use the word "deployed" only once your live app is running.
-
-**Resume (one entry):**
-> **YC Startup Intelligence Platform** | Python, SQL, pandas, scikit-learn, statsmodels, Plotly, Streamlit
-> - Built an end-to-end analytics platform on 6,260 Y Combinator companies: reproducible ingestion, validation and cleaning pipeline (with a logged decision for every data issue), a normalised 6-table SQL database and 5 analytical SQL queries using CTEs and window functions.
-> - Developed a 9-tab interactive Streamlit dashboard with 20 Plotly charts, dynamic filters, confidence-interval outcome rates, an "Industry Growth Momentum" metric and CSV exports; deployed publicly.
-> - Implemented time-series forecasting with rolling-origin backtesting across 5 models and 10 series, showing that most series do not beat a naive baseline while AI-company counts do (31% lower RMSE).
-> - Built a leakage-controlled status classifier (temporal split, forward-chaining CV, PR-AUC, permutation importance) and reported its weak discrimination (~0.63 test ROC-AUC) instead of overstating results.
-> - Wrote 50 automated tests and a GitHub Actions CI workflow; added experiment tracking (JSONL log with dataset hash and parameters).
-
-**LinkedIn summary sentence:**
-> Built and deployed a full-stack analytics and data-science project on Y Combinator data, covering SQL, data cleaning, dashboards, forecasting and machine learning, with an emphasis on honest validation and clearly stated limitations.
-
-## 20. Roadmap
-
-Not built yet, and stated plainly:
-
-- Statistical hypothesis tests (chi-square with effect sizes) inside the app
-- Clustering and segmentation of companies
-- A downloadable PDF/HTML analytical report and a question-explorer page
-- Dockerfile and docker-compose
-- SHAP explanations
-- Auditing the AI keyword layer with a labelled sample
-- Text-based features (embeddings) for the status model
-
-## 21. Author, licence, acknowledgements
--->
-
+> This project is not affiliated with or endorsed by Y Combinator. Data comes from YC's public company directory via the community project [yc-oss/api](https://github.com/yc-oss/api).
 **Acknowledgements:** the maintainers of [yc-oss/api](https://github.com/yc-oss/api) for the open data mirror; Y Combinator for publishing the company directory. This project is independent and not endorsed by Y Combinator.
 
