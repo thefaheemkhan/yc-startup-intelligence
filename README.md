@@ -14,7 +14,7 @@
 
 <p align="center">
   <img src="docs/images/04_industry_heatmap.png" width="48%" alt="Industry mix by batch year heatmap">
-  <img src="docs/images/19_forecast_ai.png" width="48%" alt="AI company forecast with prediction interval">
+  <img src="docs/images/18_forecast_all.png" width="48%" alt="AI company forecast with prediction interval">
 </p>
 
 ---
@@ -379,7 +379,9 @@ Batch counts, momentum table, country counts, AI share by year, filtered compani
 The app shows a warning whenever no model clearly beats naive, and notes that the gain for AI is optimistic because the same backtest chose the model and set the interval.
 
 ![Forecast: all companies](docs/images/18_forecast_all.png)
+<!--
 ![Forecast: AI companies](docs/images/19_forecast_ai.png)
+-->
 
 **Controls in the tab:** series, horizon (1-5 years), interval level, model (or "best by backtest RMSE"). It also shows the full model-comparison table and downloads for the forecast and the comparison.
 
