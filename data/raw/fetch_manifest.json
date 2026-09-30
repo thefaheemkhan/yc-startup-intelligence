@@ -1,0 +1,9 @@
+{
+  "source": "yc-oss/api (unofficial; mirrors the YC public company directory's Algolia index)",
+  "url": "https://raw.githubusercontent.com/yc-oss/api/main/companies/all.json",
+  "retrieved_at_utc": "2026-09-29T06:18:51+00:00",
+  "sha256": "bb0e714e9a6ef13b5fc6924872af6ab6bd649aa4d6902c8e95abe74fd1a5016e",
+  "bytes": 10524310,
+  "n_records": 6260,
+  "licence_note": "Factual public company data; check yc-oss/api and ycombinator.com terms before redistribution."
+}

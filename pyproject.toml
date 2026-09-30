@@ -1,0 +1,9 @@
+[project]
+name = "yc-startup-intelligence"
+version = "0.1.0"
+description = "Analytics and data-science platform over public Y Combinator company data"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

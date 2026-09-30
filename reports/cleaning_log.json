@@ -1,0 +1,52 @@
+[
+  {
+    "step": "duplicate_ids",
+    "rows_affected": 0,
+    "decision": "Dropped repeated company ids (kept last)."
+  },
+  {
+    "step": "unknown_status",
+    "rows_affected": 0,
+    "decision": "Status outside {Active, Inactive, Acquired, Public} recoded to 'Unknown'."
+  },
+  {
+    "step": "industry_unspecified",
+    "rows_affected": 18,
+    "decision": "Kept as its own category 'Unspecified' (source value); exclude from industry rate metrics."
+  },
+  {
+    "step": "unparsed_batch",
+    "rows_affected": 1,
+    "decision": "Batch not '<Season> <YYYY>' (e.g. 'Unspecified'): season/year/code null, row retained."
+  },
+  {
+    "step": "team_size_invalid",
+    "rows_affected": 134,
+    "decision": "team_size <= 0 set to null (invalid headcount)."
+  },
+  {
+    "step": "team_size_outlier",
+    "rows_affected": 13,
+    "decision": "team_size > 3038 (3xIQR fence, log1p scale) flagged and retained; use robust statistics."
+  },
+  {
+    "step": "team_size_missing",
+    "rows_affected": 245,
+    "decision": "Missing team_size left null (not imputed)."
+  },
+  {
+    "step": "launched_at_out_of_range",
+    "rows_affected": 0,
+    "decision": "launched_at outside [2005, as_of+1d] set to null."
+  },
+  {
+    "step": "no_physical_location",
+    "rows_affected": 197,
+    "decision": "No non-remote location (missing or remote-only): primary_city/country left null, not imputed."
+  },
+  {
+    "step": "shared_names",
+    "rows_affected": 191,
+    "decision": "Rows sharing a case-insensitive name kept: distinct company_id/slug."
+  }
+]
