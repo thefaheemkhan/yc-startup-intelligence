@@ -13,8 +13,10 @@
 > This project is not affiliated with or endorsed by Y Combinator. Data comes from YC's public company directory via the community project [yc-oss/api](https://github.com/yc-oss/api).
 
 <p align="center">
-  <img src="docs/images/04_industry_heatmap.png" width="48%" alt="Industry mix by batch year heatmap">
+  <img src="docs/images/01_overview_batches.png" width="48%" alt="Companies per Batch">
+  <!--
   <img src="docs/images/18_forecast_all.png" width="48%" alt="AI company forecast with prediction interval">
+  -->
 </p>
 
 ---
