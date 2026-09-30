@@ -14,7 +14,7 @@
 
 <p align="center">
   <img src="docs/images/01_overview_batches.png" width="48%" alt="Companies per Batch">
-  <img src="docs/images/03_industry_top" width="48%" alt="Top 10 Industry Groups ">
+  <img src="docs/images/03_industry_top.png" width="48%" alt="Top 10 Industry Groups ">
 </p>
 
 ---
