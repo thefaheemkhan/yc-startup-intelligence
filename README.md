@@ -1,13 +1,14 @@
 # YC Startup Intelligence Platform
-
+```
 [![CI](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions)
+```
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR-APP.streamlit.app)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 **An end-to-end analytics and data-science project on 6,260 Y Combinator companies: a reproducible data pipeline, a normalised SQL database, an interactive 9-tab Streamlit dashboard, time-series forecasting with proper backtesting, and a leakage-controlled machine-learning model, all with tests and CI.**
 
-**Live demo:** [https://YOUR-APP.streamlit.app](https://yc-startup-intelligence.streamlit.app/) *(see [Deployment](https://yc-startup-intelligence.streamlit.app/))*
+**Live demo:** [https://thefaheemkhan.streamlit.app](https://yc-startup-intelligence.streamlit.app/) *(see [Deployment](https://yc-startup-intelligence.streamlit.app/))*
 
 > This project is not affiliated with or endorsed by Y Combinator. Data comes from YC's public company directory via the community project [yc-oss/api](https://github.com/yc-oss/api).
 
