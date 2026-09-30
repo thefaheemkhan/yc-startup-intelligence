@@ -1,4 +1,4 @@
-# YC Startup Intelligence Platform
+# Y Combinator Startup Intelligence Platform
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR-APP.streamlit.app)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
