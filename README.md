@@ -7,7 +7,7 @@
 
 **An end-to-end analytics and data-science project on 6,260 Y Combinator companies: a reproducible data pipeline, a normalised SQL database, an interactive 9-tab Streamlit dashboard, time-series forecasting with proper backtesting, and a leakage-controlled machine-learning model, all with tests and CI.**
 
-**Live demo:** https://YOUR-APP.streamlit.app *(replace after deploying; see [Deployment](#deployment))*
+**Live demo:** [https://YOUR-APP.streamlit.app](https://yc-startup-intelligence.streamlit.app/) *(see [Deployment](https://yc-startup-intelligence.streamlit.app/))*
 
 > This project is not affiliated with or endorsed by Y Combinator. Data comes from YC's public company directory via the community project [yc-oss/api](https://github.com/yc-oss/api).
 
