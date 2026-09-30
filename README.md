@@ -1,7 +1,7 @@
 # YC Startup Intelligence Platform
-```
+<!--
 [![CI](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR-USERNAME/yc-startup-intelligence/actions)
-```
+-->
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://YOUR-APP.streamlit.app)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
