@@ -37,11 +37,13 @@
 14. [Technology stack](#14-technology-stack)
 15. [Methodology and statistical concepts](#15-methodology-and-statistical-concepts)
 16. [Limitations and responsible analytics](#16-limitations-and-responsible-analytics)
-17. [Run locally](#17-run-locally)
-18. [Deployment](#deployment)
-19. [Resume and LinkedIn bullets](#19-resume-and-linkedin-bullets)
-20. [Roadmap](#20-roadmap)
-21. [Author, licence, acknowledgements](#21-author-licence-acknowledgements)
+<!--
+18. [Run locally](#17-run-locally)
+19. [Deployment](#deployment)
+20. [Resume and LinkedIn bullets](#19-resume-and-linkedin-bullets)
+21. [Roadmap](#20-roadmap)
+22. [Author, licence, acknowledgements](#21-author-licence-acknowledgements)
+-->
 
 ---
 
@@ -521,6 +523,7 @@ Modular Python project structure, unit and integration testing, GitHub Actions C
 - All comparisons are descriptive; nothing here is causal.
 - The data is a snapshot from the retrieval date; refreshing changes the numbers.
 
+<!--
 ## 17. Run locally
 
 Requires Python 3.10 or newer. The data is already included.
@@ -645,11 +648,7 @@ Not built yet, and stated plainly:
 - Text-based features (embeddings) for the status model
 
 ## 21. Author, licence, acknowledgements
-
-**Author:** YOUR NAME | [LinkedIn](https://www.linkedin.com/in/YOUR-PROFILE) | [GitHub](https://github.com/YOUR-USERNAME)
-
-**Licence:** MIT for the code (see `LICENSE`). The company data is factual public data from YC's directory; check the terms of yc-oss/api and ycombinator.com before redistributing it.
+-->
 
 **Acknowledgements:** the maintainers of [yc-oss/api](https://github.com/yc-oss/api) for the open data mirror; Y Combinator for publishing the company directory. This project is independent and not endorsed by Y Combinator.
 
-streamlit run app/streamlit_app.py
